@@ -1,5 +1,9 @@
 name: Test CICD
 
+on:
+  push:
+    branches:
+      - main
 jobs:
   install-kubectl:
     runs-on: ubuntu-latest
