@@ -1,0 +1,24 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: node-reader-ks
+  namespace: kube-system
+rules:
+- apiGroups: [""]
+  resources: ["nodes"]
+  verbs: ["get", "watch", "list"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: node-reader-ks-role-binding
+  namespace: kube-system
+subjects:
+- kind: User
+  name: ocid1.user.oc1..aaaaaaaarzbdhfrpfhcw3h4be7hcukuaini7sz3qqlhttzidldugnkxb4zjq
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: node-reader-ks
+  apiGroup: rbac.authorization.k8s.io
+
