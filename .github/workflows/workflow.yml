@@ -23,4 +23,4 @@ jobs:
           cluster: ${{ secrets.OKE_CLUSTER_OCID }}
 
       - name: Run Kubectl
-        run: kubectl get pods -A
+        run: kubectl get pods
